@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios';
+
 import { store } from './store.js';
 import AppProjects from './components/AppProjects.vue';
   
@@ -26,7 +26,9 @@ export default {
 </script>
 
 <template>
-  <AppProjects>BOOOOOOOOOOOOOOOOOOBS</AppProjects>
+  <div class="container">
+    <AppProjects></AppProjects>
+  </div>
 </template>
 
 <style>
