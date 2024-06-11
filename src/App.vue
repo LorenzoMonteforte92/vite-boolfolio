@@ -28,16 +28,8 @@ export default {
 </script>
 
 <template>
-  <div class="container ">
-    <div class="row">
-      <div class="col">
-        <Appheader></Appheader>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <router-view></router-view>
-  </div>
+  <Appheader></Appheader>
+  <router-view></router-view>
 </template>
 
 <style>
