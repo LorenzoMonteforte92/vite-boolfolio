@@ -1,5 +1,5 @@
 <script>
-import SingleProject from '../pages/SingleProject.vue';
+import SingleProject from '../pages/ProjectsList.vue';
 import axios from 'axios';
 
     export default {
