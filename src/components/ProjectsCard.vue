@@ -25,7 +25,7 @@
             <h5 class="card-title">{{ projectInfo.name }}</h5>
             <p v-if="projectInfo.summary " class="card-text">{{ projectInfo.summary }}</p>
             <div >
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">View More</a>
             </div>
         </div>
     </div>
