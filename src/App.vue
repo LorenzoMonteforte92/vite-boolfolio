@@ -29,7 +29,6 @@ export default {
 
 <template>
   <Appheader></Appheader>
-  <AppProjects></AppProjects>
   <router-view></router-view>
 </template>
 
