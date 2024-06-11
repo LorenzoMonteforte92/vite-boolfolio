@@ -1,5 +1,5 @@
 <script>
-import ProjectCard from './ProjectsCard.vue';
+import ProjectCard from '../components/ProjectsCard.vue';
 import axios from 'axios';
 
     export default {
@@ -36,9 +36,10 @@ import axios from 'axios';
 </script>
 
 <template>
-    <h1 class="my-5" >MyProjects</h1>
+    
     <div class="container">
         <div class="row">
+            <h1 class="my-5" >MyProjects</h1>
             <div class="col d-flex flex-wrap gap-3 justify-content-center">
                 <ProjectCard v-for="singleProject in projects" :projectInfo="singleProject" ></ProjectCard>
             </div>
