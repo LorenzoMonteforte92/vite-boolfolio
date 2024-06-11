@@ -2,11 +2,13 @@
 
 import { store } from './store.js';
 import AppProjects from './components/AppProjects.vue';
+import Appheader from './components/Appheader.vue';
   
 
 export default {
   components: {
     AppProjects,
+    Appheader,
 
   },
 
@@ -26,8 +28,15 @@ export default {
 </script>
 
 <template>
+  <div class="container ">
+    <div class="row">
+      <div class="col">
+        <Appheader></Appheader>
+      </div>
+    </div>
+  </div>
   <div class="container">
-    <AppProjects></AppProjects>
+    <router-view></router-view>
   </div>
 </template>
 
