@@ -1,6 +1,6 @@
 <script>
     export default {
-        name: 'ProjectsList',
+        name: 'ProjectCard',
         props: {
             projectInfo: Object
         },

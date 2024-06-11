@@ -1,12 +1,12 @@
 <script>
-import SingleProject from '../pages/ProjectsList.vue';
+import ProjectCard from './ProjectsCard.vue';
 import axios from 'axios';
 
     export default {
         name: 'AppProjects',
 
         components: {
-            SingleProject,
+            ProjectCard,
 
     },
 
@@ -37,9 +37,11 @@ import axios from 'axios';
 
 <template>
     <h1 class="my-5" >MyProjects</h1>
-    <div class="row">
-        <div class="col d-flex flex-wrap gap-3 justify-content-center">
-            <SingleProject v-for="singleProject in projects" :projectInfo="singleProject" ></SingleProject>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex flex-wrap gap-3 justify-content-center">
+                <ProjectCard v-for="singleProject in projects" :projectInfo="singleProject" ></ProjectCard>
+            </div>
         </div>
     </div>
 </template>

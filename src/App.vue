@@ -1,14 +1,14 @@
 <script>
 
 import { store } from './store.js';
-import AppProjects from './components/AppProjects.vue';
 import Appheader from './components/Appheader.vue';
-  
+import AppProjects from './pages/AppProjects.vue';
 
 export default {
   components: {
     AppProjects,
     Appheader,
+    AppProjects
 
   },
 
@@ -29,6 +29,7 @@ export default {
 
 <template>
   <Appheader></Appheader>
+  <AppProjects></AppProjects>
   <router-view></router-view>
 </template>
 
