@@ -7,12 +7,13 @@ import axios from 'axios';
 
         components: {
 
-            store,
+    
         },
 
         data(){
             return{
                 project: null,
+                store,
             }
         },
         methods: {
@@ -21,7 +22,6 @@ import axios from 'axios';
                 axios.get(`${this.store.apiBaseURL}/api/projects/${this.$route.params.slug}`)
                 .then((response) => {
                 this.project = response.data.project;
-                console.log(this.project)
       })
             }
          },
@@ -46,6 +46,8 @@ import axios from 'axios';
                     <img v-if="project.image" :src="`${this.store.apiBaseURL}/storage/${project.image}`" class="card-img-top" alt="...">
                     <div class="card-body" >
                         <h5 class="card-title">{{ project.name }}</h5>
+                        <p v-if="project.technologies" class="card-text"><strong>Tecnologies: </strong>{{ project.technologies.name }}</p>
+                        <p v-if="project.type" class="card-text"><strong>Types: </strong>{{ project.type.name }}</p>
                         <p class="card-text">{{ project.summary }}</p>
                     </div>
                 </div>

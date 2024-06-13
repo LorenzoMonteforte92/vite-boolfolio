@@ -8,13 +8,13 @@ import { store } from '../store.js';
 
         components: {
             ProjectCard,
-            store,
 
     },
 
         data() {
             return{
-                projects: []
+                projects: [],
+                store,
             }
         },
         

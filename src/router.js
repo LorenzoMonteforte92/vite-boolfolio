@@ -4,6 +4,7 @@ import AppHome from './pages/AppHome.vue';
 import AppAbout from './pages/AppAbout.vue';
 import AppProjects from './pages/AppProjects.vue';
 import SingleProject from './pages/SingleProject.vue';
+import NotFound from './pages/NotFound.vue';
 
 
 const router = createRouter({	
@@ -28,6 +29,12 @@ const router = createRouter({
             path: '/projects/:slug',
             name: 'Single-project',
             component: SingleProject
+        },
+        //rotta per gestire il 404 not found
+        {
+            path: "/:pathMatch(.*)*",
+            name: "not-found",
+            component: NotFound
         },
     ]
 });
