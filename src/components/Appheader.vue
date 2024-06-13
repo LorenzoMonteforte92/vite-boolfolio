@@ -4,7 +4,24 @@
 
         data(){
             return{
-                
+               navLinks: [
+                {
+                    route: 'home',
+                    text: 'Home'
+                },
+                {
+                    route: 'about',
+                    text: 'About'
+                },
+                {
+                    route: 'projects',
+                    text: 'Projects'
+                },
+                // {
+                //     route: 'contact-us',
+                //     text: 'Contact Us'
+                // },
+               ] 
             }
         },
         methods: {
@@ -26,14 +43,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'home' }" class="nav-link active" aria-current="page">Home</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'about' }" class="nav-link" >About</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'projects' }" class="nav-link" >Projects</router-link>
+                        <li v-for="link in navLinks" class="nav-item">
+                            <router-link :to="{ name: link.route }" class="nav-link active" aria-current="page">{{ link.text }}</router-link>
                         </li>
                     </ul>
                 </div>
