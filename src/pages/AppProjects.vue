@@ -23,7 +23,7 @@ import { store } from '../store.js';
             getProjects() {
                 axios.get(`${this.store.apiBaseURL}/api/projects`)
                 .then((response) => {
-                this.projects = response.data.results;
+                this.projects = response.data.results.data;
                 console.log(this.projects)
         })
     }
@@ -43,9 +43,19 @@ import { store } from '../store.js';
             <h1>MyProjects</h1>
         </div>
         <div class="row">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-around">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
             <div class="col d-flex flex-wrap gap-3 justify-content-center">
                 <ProjectCard v-for="singleProject in projects" :projectInfo="singleProject" ></ProjectCard>
             </div>
+            <ul class="pagination justify-content-around mt-3">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
         </div>
     </div>
 </template>
