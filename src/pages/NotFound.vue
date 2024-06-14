@@ -6,6 +6,10 @@ export default {
 
 <template>
     <div class="container">
-        <h2>Page not found</h2>
+        <h4>404 Page Not found</h4>
     </div>
 </template>
+
+<style scoped lang="scss">
+
+</style>

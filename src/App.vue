@@ -4,11 +4,13 @@ import { store } from './store.js';
 import Appheader from './components/Appheader.vue';
 import AppProjects from './pages/AppProjects.vue';
 
+
 export default {
   components: {
     AppProjects,
     Appheader,
-    AppProjects
+    AppProjects,
+  
 
   },
 

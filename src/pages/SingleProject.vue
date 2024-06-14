@@ -46,7 +46,7 @@ import axios from 'axios';
                     <img v-if="project.image" :src="`${this.store.apiBaseURL}/storage/${project.image}`" class="card-img-top" alt="...">
                     <div class="card-body" >
                         <h5 class="card-title">{{ project.name }}</h5>
-                        <p v-if="project.technologies" class="card-text"><strong>Tecnologies: </strong>{{ project.technologies.name }}</p>
+                        <p v-if="project.technologies.length > 0" class="card-text"><strong>Tecnologies: </strong><span v-for="technology in project.technologies" >{{ technology.name }}&nbsp;</span></p>
                         <p v-if="project.type" class="card-text"><strong>Types: </strong>{{ project.type.name }}</p>
                         <p class="card-text">{{ project.summary }}</p>
                     </div>
