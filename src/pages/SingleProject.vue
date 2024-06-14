@@ -14,6 +14,8 @@ import axios from 'axios';
             return{
                 project: null,
                 store,
+                success: true,
+                error: null,
             }
         },
         methods: {
@@ -22,6 +24,10 @@ import axios from 'axios';
                 axios.get(`${this.store.apiBaseURL}/api/projects/${this.$route.params.slug}`)
                 .then((response) => {
                 this.project = response.data.project;
+                this.success = response.data.success;
+                if(!response.data.success){
+                    this.error = response.data.error
+                };
       })
             }
          },
@@ -36,14 +42,19 @@ import axios from 'axios';
 </script>
 
 <template>
+    <div v-if="!success" class="container">
+        <h3>{{ this.error }}</h3>
+    </div>
      <div v-if="project" class="container">
         <div class="row mb-3">
-            <h1>Project: {{ project.name }}</h1>
+            <h1 >Project: {{ project.name }}</h1>
         </div>
         <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;" >
-                    <img v-if="project.image" :src="`${this.store.apiBaseURL}/storage/${project.image}`" class="card-img-top" alt="...">
+            <div class="col d-flex justify-content-center">
+                <div class="card mt-2" style="width: 70%" >
+                    <div class="ms-card-img text-center" >
+                        <img v-if="project.image" :src="`${this.store.apiBaseURL}/storage/${project.image}`" class="card-img-top pt-2" alt="...">
+                    </div>
                     <div class="card-body" >
                         <h5 class="card-title">{{ project.name }}</h5>
                         <p v-if="project.technologies.length > 0" class="card-text"><strong>Tecnologies: </strong><span v-for="technology in project.technologies" >{{ technology.name }}&nbsp;</span></p>
@@ -57,5 +68,11 @@ import axios from 'axios';
 </template>
 
 <style scoped lang="scss">
+
+    .ms-card-img{
+        img{
+            width: 30%;
+                    }
+    }
 
 </style>
