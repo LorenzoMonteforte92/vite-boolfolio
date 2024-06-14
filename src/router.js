@@ -5,6 +5,8 @@ import AppAbout from './pages/AppAbout.vue';
 import AppProjects from './pages/AppProjects.vue';
 import SingleProject from './pages/SingleProject.vue';
 import NotFound from './pages/NotFound.vue';
+import AppContactUs from './pages/AppContactUs.vue';
+
 
 
 const router = createRouter({	
@@ -24,6 +26,11 @@ const router = createRouter({
             path: '/projects',
             name: 'projects',
             component: AppProjects
+        },
+        {
+            path: '/contact-us',
+            name: 'contact-us',
+            component: AppContactUs
         },
         {
             path: '/projects/:slug',

@@ -56,22 +56,22 @@ import { store } from '../store.js';
         <div class="row">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-around">
-                    <li class="page-item" :class="{disabled: !this.prevPage}"  v-if="!this.prevPage" ><a class="page-link">First Page</a></li>
+                    <li class="page-item" :class="{disabled: !this.prevPage}"  v-if="!this.prevPage" ><a class="page-link">Previous</a></li>
                     <li class="page-item" v-if="this.prevPage" ><a class="page-link" @click="getProjects(currentPage - 1)" >Previous</a></li>
                     <li class="page-item pt-2"><span class="fw-bold text-primary" >{{currentPage}}</span></li>
                     <li class="page-item" v-if="this.nextPage" ><a class="page-link" @click="getProjects(currentPage + 1)" >Next</a></li>
-                    <li class="page-item" :class="{disabled: !this.nextPage}"  v-if="!this.nextPage" ><a class="page-link">Last Page</a></li>
+                    <li class="page-item" :class="{disabled: !this.nextPage}"  v-if="!this.nextPage" ><a class="page-link">Next</a></li>
                 </ul>
             </nav>
             <div class="col d-flex flex-wrap gap-3 justify-content-center">
                 <ProjectCard v-for="singleProject in projects" :projectInfo="singleProject" ></ProjectCard>
             </div>
             <ul class="pagination justify-content-around mt-3">
-                <li class="page-item" :class="{disabled: !this.prevPage}"  v-if="!this.prevPage" ><a class="page-link">First Page</a></li>
+                <li class="page-item" :class="{disabled: !this.prevPage}"  v-if="!this.prevPage" ><a class="page-link">Previous</a></li>
                 <li class="page-item" v-if="this.prevPage" ><a class="page-link" @click="getProjects(currentPage - 1)" >Previous</a></li>
                 <li class="page-item pt-2"><span class="fw-bold text-primary"  >{{currentPage}}</span></li>
                 <li class="page-item" v-if="this.nextPage" ><a class="page-link" @click="getProjects(currentPage + 1)" >Next</a></li>
-                <li class="page-item" :class="{disabled: !this.nextPage}" v-if="!this.nextPage" ><a class="page-link">Last Page</a></li>
+                <li class="page-item" :class="{disabled: !this.nextPage}" v-if="!this.nextPage" ><a class="page-link">Next</a></li>
             </ul>
         </div>
     </div>

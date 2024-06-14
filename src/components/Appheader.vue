@@ -17,10 +17,10 @@
                     route: 'projects',
                     text: 'Projects'
                 },
-                // {
-                //     route: 'contact-us',
-                //     text: 'Contact Us'
-                // },
+                {
+                    route: 'contact-us',
+                    text: 'Contact Us'
+                },
                ] 
             }
         },
